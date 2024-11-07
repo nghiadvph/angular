@@ -1,0 +1,39 @@
+
+<main>
+  <div class="nav">
+    <div class="image">
+      <img src="https://didongviet.vn/_next/image?url=https%3A%2F%2Fcdn-v2.didongviet.vn%2Ffiles%2Fbanners%2F2024%2F8%2F20%2F1%2F1726809104752_pre_order_824x400_copy_5.jpg&w=1080&q=100"/>
+    </div>
+    <div class="right-conten">
+      <img src="https://didongviet.vn/_next/image?url=https%3A%2F%2Fcdn-v2.didongviet.vn%2Ffiles%2Fbanners%2F2024%2F8%2F25%2F1%2F1727232290794_s24.jpg&w=1080&q=75"/>
+      <img src="https://didongviet.vn/_next/image?url=https%3A%2F%2Fcdn-v2.didongviet.vn%2Ffiles%2Fbanners%2F2024%2F8%2F13%2F1%2F1726212392811_airpods_4_398_x_252_1.jpg&w=1080&q=75"/>
+      <img src="https://didongviet.vn/_next/image?url=https%3A%2F%2Fcdn-v2.didongviet.vn%2Ffiles%2Fbanners%2F2024%2F8%2F4%2F1%2F1725421242240_smart_phone_398x252.jpg&w=1080&q=75"/>
+    </div>
+  </div>
+    <div class="row">
+    </div>
+    <div class="container mt-4">
+      <div class="row">
+        @for (product of product; track product._id) {
+        <div class="col mt-4">
+          <div class="card" style="width: 18rem">
+            <img style="height: 18rem"
+              class="card-img-top" [routerLink]="['/product-detail/',product._id]"
+              [src]="product.image"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5 class="card-title text-truncate ">{{ product.name }}</h5>
+              <p class="text-truncate">{{product.description}}</p>
+              <p>Price: <span class="text-danger">{{ product.price }} VND</span></p>
+              <a href="#" [routerLink]="['/product-detail/',product._id]" class="btn btn-primary">Mua</a>
+              <button class="btn btn-danger add">Add To Card</button>
+            </div>
+          </div>
+        </div>
+        } @empty {
+        <li>There are no items.</li>
+        }
+      </div>
+    </div>
+  </main>

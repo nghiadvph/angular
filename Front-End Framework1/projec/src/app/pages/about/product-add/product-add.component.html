@@ -1,0 +1,123 @@
+<!-- <div class="container">
+    <form [formGroup]="onCraete" (ngSubmit)="handleCraete()">
+     <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" id="name" class="form-control" formControlName="name"/>
+        @if(name?.invalid && name?.touched) {
+            <div>
+              @if(name?.hasError('required')) {
+              <small id="emailHelp" class="text-danger"> Name required </small>
+              } @if(name?.hasError('minLength')) {
+              <small id="emailHelp" class="text-danger"> Name ít nhất 3 kí tự </small>
+              }
+            </div>
+            }
+     </div>
+     <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input type="number" id="price" class="form-control" formControlName="price"/>
+        @if(price?.invalid && price?.touched) {
+            <div>
+              @if(price?.hasError('required')) {
+              <small id="emailHelp" class="text-danger"> price required </small>
+              } @if(price?.hasError('minLength')) {
+              <small id="emailHelp" class="text-danger"> price lớn hơn 0 </small>
+              }
+            </div>
+            }
+     </div>
+     <div class="mb-3">
+        <label class="form-label">Image</label>
+        <input type="text" id="image" class="form-control" formControlName="image"/>
+        @if(image?.invalid && image?.touched) {
+            <div>
+              @if(image?.hasError('required')) {
+              <small id="emailHelp" class="text-danger"> image required </small>
+              }
+            </div>
+            }
+     </div>
+     <div class="mb-3">
+        <label class="form-label">Description</label>
+        <input type="text" id="description" class="form-control" formControlName="description"/>
+        @if(description?.invalid && description?.touched) {
+            <div>
+              @if(description?.hasError('required')) {
+              <small id="emailHelp" class="text-danger"> description required </small>
+              }
+            </div>
+            }
+     </div>
+     <div class="mb-3">
+       <button class="btn btn-primary" type="submit" [disabled]="onCraete.invalid">Submit</button>
+     </div>
+    </form>
+</div> -->
+<h2 class="text-center my-3">Product Add</h2>
+<form [formGroup]="onCraete" (ngSubmit)="handleCraete()">
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" id="name" class="form-control" formControlName="name"/>
+        @if(name?.invalid && name?.touched) {
+            <div>
+              @if(name?.hasError('required')) {
+              <small id="emailHelp" class="text-danger"> Name required </small>
+              } @if(name?.hasError('minLength')) {
+              <small id="emailHelp" class="text-danger"> Name ít nhất 3 kí tự </small>
+              }
+            </div>
+            }
+     </div>
+     <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input type="number" id="price" class="form-control" formControlName="price"/>
+        @if(price?.invalid && price?.touched) {
+            <div>
+              @if(price?.hasError('required')) {
+              <small id="emailHelp" class="text-danger"> price required </small>
+              } @if(price?.hasError('minLength')) {
+              <small id="emailHelp" class="text-danger"> price lớn hơn 0 </small>
+              }
+            </div>
+            }
+     </div>
+     <div class="mb-3">
+        <label class="form-label">Image</label>
+        <input type="text" id="image" class="form-control" formControlName="image"/>
+        @if(image?.invalid && image?.touched) {
+            <div>
+              @if(image?.hasError('required')) {
+              <small id="emailHelp" class="text-danger"> image required </small>
+              }
+            </div>
+            }
+     </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea
+      class="form-control"
+      id="description"
+      rows="3"
+      formControlName="description"
+    ></textarea>
+  </div>
+  <!-- <div class="mb-3">
+    <label for="startAt" class="form-label">Start At</label>
+    <input
+      type="datetime-local"
+      class="form-control"
+      id="startAt"
+      formControlName="startAt"
+    />
+  </div> -->
+  <!-- <div class="mb-3">
+    <label for="times" class="form-label">Select Times</label>
+    <select class="form-control" id="times" formControlName="bidTime">
+      <option value="">Select Time</option>
+      <option value="15">15p</option>
+      <option value="30">30p</option>
+      <option value="60">1h</option>
+    </select>
+  </div> -->
+  <button type="submit" class="btn btn-primary" [disabled]="onCraete.invalid">Create Product</button>
+</form>

@@ -1,0 +1,17 @@
+<div class="container">
+    @if(product){
+      <div class="box">
+        <div class="box1">
+            <img [src]="product.image" width="400" height="400"/>
+        </div>
+        <div class="box2">
+            <h2>{{product.name}}</h2>
+            <p>{{product.description}}</p>
+            <p>Giá: <span class="text-danger">{{product.price}}$</span></p>
+            <button class="btn btn-primary">Add To Card</button>
+        </div>
+      </div>
+    }@else{
+      <h2>Product Not Found</h2>
+    }
+</div>

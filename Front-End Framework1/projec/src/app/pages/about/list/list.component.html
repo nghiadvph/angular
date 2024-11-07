@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="admin1">
+        <h2>Admin</h2>
+       
+    </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th> 
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(product of product; track product._id){
+                <tr>
+                    <td>{{product._id}}</td>
+                    <td>{{product.name}}</td>
+                    <td><img width="200" height="200" [src]="product.image"/></td>
+                    <td>{{product.price}}</td>
+                    <td><button (click)="deleteProduct(product._id)" class="btn btn-danger">Xóa</button>
+                    </td>
+                </tr>   
+            }@empty{
+                <p>There is not Product</p>
+            }
+            </tbody>
+        </table>
+</div>
